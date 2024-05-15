@@ -14,13 +14,13 @@ package login;
 public class Usuario {
     public final int id;
     public final String nombre;
-    public final int tipo;
+    public final int rol;
     public final boolean esAdmin;
     
-    public Usuario(int id, String nombre, int tipo) {
+    public Usuario(int id, String nombre, int rol) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
-        this.esAdmin = tipo == 0;
+        this.rol = rol;
+        this.esAdmin = rol == 1;
     }
 }

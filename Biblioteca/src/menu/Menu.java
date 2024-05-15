@@ -24,14 +24,14 @@ public class Menu extends javax.swing.JFrame {
     private Menu() {
         initComponents();
         
-        switch (UsuarioLogin.loggedUser.tipo) {
-            case 0:
+        switch (UsuarioLogin.loggedUser.rol) {
+            case 1:
                 lblUserType.setText("Administrador");
                 break;
-            case 1:
+            case 2:
                 lblUserType.setText("Profesor");
                 break;
-            case 2:
+            case 3:
                 lblUserType.setText("Estudiante");
                 break;
             default:
@@ -214,9 +214,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
