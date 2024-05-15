@@ -43,11 +43,13 @@ public class ItemsConsultar extends javax.swing.JFrame {
     
     private void cargarData() {
         DefaultTableModel libroData = Consulta.libro();
+        DefaultTableModel obraData = Consulta.obra();
         DefaultTableModel revistaData = Consulta.revista();
         DefaultTableModel cdData = Consulta.cd();
         DefaultTableModel tesisData = Consulta.tesis();
         
         this.tblLibro.setModel(libroData);
+        this.tblObra.setModel(obraData);
         this.tblRevista.setModel(revistaData);
         this.tblCd.setModel(cdData);
         this.tblTesis.setModel(tesisData);
@@ -67,6 +69,10 @@ public class ItemsConsultar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLibro = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblObra = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -92,7 +98,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Consultar Libro");
+        jLabel2.setText("Consultar Libros");
         jLabel2.setAlignmentY(0.0F);
 
         jScrollPane1.setViewportView(tblLibro);
@@ -118,6 +124,37 @@ public class ItemsConsultar extends javax.swing.JFrame {
         );
 
         tabsBar.addTab("Libros", jPanel2);
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Consultar Obras");
+        jLabel3.setAlignmentY(0.0F);
+
+        jScrollPane5.setViewportView(tblObra);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tabsBar.addTab("Obras", jPanel5);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -158,7 +195,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabsBar.addTab("Revista", jPanel1);
+        tabsBar.addTab("Revistas", jPanel1);
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -295,20 +332,24 @@ public class ItemsConsultar extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane tabsBar;
     private javax.swing.JTable tblCd;
     private javax.swing.JTable tblLibro;
+    private javax.swing.JTable tblObra;
     private javax.swing.JTable tblRevista;
     private javax.swing.JTable tblTesis;
     // End of variables declaration//GEN-END:variables

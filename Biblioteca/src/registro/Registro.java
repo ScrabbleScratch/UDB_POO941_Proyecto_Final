@@ -84,9 +84,49 @@ public class Registro {
         return false;
     }
     
+    public static boolean obra(JTextField codigo, JTextField nombre, JTextField autor, JTextField genero, JTextField editorial, JFormattedTextField isbn, JTextField anio, JTextField edicion, JTextField unidad, JTextField estante, JTextField palabras) {
+        try {
+            String consulta = "INSERT INTO obras (codigo, nombre, autor, genero, editorial, isbn, "
+                    + "anio_publicacion, edicion, unidades, disponible, estante, palabras_clave) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
+            
+            int intAnio = Integer.parseInt(anio.getText());
+            int intEdicion = Integer.parseInt(edicion.getText());
+            int intUnidad = Integer.parseInt(unidad.getText());
+            int disponible = 1;
+            
+            ps.setString(1, codigo.getText());
+            ps.setString(2, nombre.getText());
+            ps.setString(3, autor.getText());
+            ps.setString(4, genero.getText());
+            ps.setString(5, editorial.getText());
+            ps.setString(6, isbn.getText());
+            ps.setInt(7, intAnio);
+            ps.setInt(8, intEdicion);
+            ps.setInt(9, intUnidad);
+            ps.setInt(10, disponible);
+            ps.setString(11, estante.getText());
+            ps.setString(12, palabras.getText());
+            
+            int resultado = ps.executeUpdate();
+            
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(null, "Registro guardado");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al ingresar los datos");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+        }
+        
+        return false;
+    }
+    
     public static boolean revista(JTextField codigo, JTextField nombre, JTextField editorial, JComboBox frecuencia, JFormattedTextField issn, JTextField tematica, JTextField volumen, JTextField estante, JTextField palabras) {
         try {
-            String consulta = "INSERT INTO revista (codigo, nombre, editorial, frecuencia, issn, "
+            String consulta = "INSERT INTO revistas (codigo, nombre, editorial, frecuencia, issn, "
                     + "tematica, volumen, estante, disponible, palabras_clave) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
@@ -123,7 +163,7 @@ public class Registro {
     
     public static boolean cd(JTextField codigo, JTextField nombre, JTextField autor, JTextField genero, JTextField anio, JTextField duracion, JTextField estante) {
         try {
-            String consulta = "INSERT INTO cd "
+            String consulta = "INSERT INTO cds "
                     + "(codigo, nombre, autor, genero, anio_publicacion, duracion, disponible, estante) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);

@@ -27,25 +27,6 @@ INSERT INTO `usuarios` VALUES
     (2,'AA230040','123456',1);
 UNLOCK TABLES;
 
--- CD
-DROP TABLE IF EXISTS `cd`;
-CREATE TABLE `cd` (
-  `codigo` varchar(8) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `autor` varchar(100) DEFAULT NULL,
-  `genero` varchar(100) DEFAULT NULL,
-  `anio_publicacion` int DEFAULT NULL,
-  `duracion` int DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
-  `estante` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-LOCK TABLES `cd` WRITE;
-INSERT INTO `cd` VALUES
-	('CD123456','Hibryd Theory','Linking Park','Alternativo',2006,130,1,'6');
-UNLOCK TABLES;
-
 -- LIBROS
 DROP TABLE IF EXISTS `libros`;
 CREATE TABLE `libros` (
@@ -66,12 +47,35 @@ CREATE TABLE `libros` (
 
 LOCK TABLES `libros` WRITE;
 INSERT INTO `libros` VALUES
+	('LIB12345','Ciencias Naturales','Santillana','Educativo','Santillana','123-4-56-789456-1',2010,13,3,1,'4','ciencias, educacion');
+UNLOCK TABLES;
+
+-- OBRAS
+DROP TABLE IF EXISTS `obras`;
+CREATE TABLE `obras` (
+  `codigo` varchar(8) NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `autor` varchar(100) DEFAULT NULL,
+  `genero` varchar(100) DEFAULT NULL,
+  `editorial` varchar(100) DEFAULT NULL,
+  `isbn` varchar(20) DEFAULT NULL,
+  `anio_publicacion` int DEFAULT NULL,
+  `edicion` int DEFAULT NULL,
+  `unidades` int DEFAULT NULL,
+  `disponible` int DEFAULT NULL,
+  `estante` varchar(10) DEFAULT NULL,
+  `palabras_clave` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+LOCK TABLES `obras` WRITE;
+INSERT INTO `obras` VALUES
 	('LIB12345','Don Quijote','Miguel de Cervantes','Clasico','Santillana','123-4-56-789456-1',2010,13,3,1,'4','Clasico');
 UNLOCK TABLES;
 
 -- REVISTAS
-DROP TABLE IF EXISTS `revista`;
-CREATE TABLE `revista` (
+DROP TABLE IF EXISTS `revistas`;
+CREATE TABLE `revistas` (
   `codigo` varchar(8) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
@@ -85,9 +89,28 @@ CREATE TABLE `revista` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-LOCK TABLES `revista` WRITE;
-INSERT INTO `revista` VALUES
+LOCK TABLES `revistas` WRITE;
+INSERT INTO `revistas` VALUES
 	('REV12345','National Geographic','National Geograpic','Mensual','1234-5678','Ciencia',25,'2',1,'Ciencia');
+UNLOCK TABLES;
+
+-- CD
+DROP TABLE IF EXISTS `cds`;
+CREATE TABLE `cds` (
+  `codigo` varchar(8) NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `autor` varchar(100) DEFAULT NULL,
+  `genero` varchar(100) DEFAULT NULL,
+  `anio_publicacion` int DEFAULT NULL,
+  `duracion` int DEFAULT NULL,
+  `disponible` int DEFAULT NULL,
+  `estante` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+LOCK TABLES `cds` WRITE;
+INSERT INTO `cds` VALUES
+	('CD123456','Hibryd Theory','Linking Park','Alternativo',2006,130,1,'6');
 UNLOCK TABLES;
 
 -- TESIS

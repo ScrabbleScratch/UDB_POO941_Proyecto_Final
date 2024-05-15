@@ -56,9 +56,22 @@ public class Consulta {
         return null;
     }
     
+    public static DefaultTableModel obra() {
+        try {
+            String consulta = "SELECT * FROM obras;";
+            PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
+            ResultSet rs = ps.executeQuery();
+            return buildTableModel(rs);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+        }
+        
+        return null;
+    }
+    
     public static DefaultTableModel revista() {
         try {
-            String consulta = "SELECT * FROM revista;";
+            String consulta = "SELECT * FROM revistas;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
             return buildTableModel(rs);
@@ -71,7 +84,7 @@ public class Consulta {
     
     public static DefaultTableModel cd() {
         try {
-            String consulta = "SELECT * FROM cd;";
+            String consulta = "SELECT * FROM cds;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
             return buildTableModel(rs);

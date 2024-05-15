@@ -53,7 +53,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jTextField30 = new javax.swing.JTextField();
         tabsBar = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        Libros = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btnCancelarLib = new javax.swing.JButton();
@@ -82,7 +82,36 @@ public class ItemsRegistro extends javax.swing.JFrame {
         txtGeneroLib = new javax.swing.JTextField();
         txtEdicionLib = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        Obras = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        btnCancelarObra = new javax.swing.JButton();
+        btnIngresarObra = new javax.swing.JButton();
+        btnClearObra = new javax.swing.JButton();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        txtEditorialObra = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        txtAnioObra = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        txtCodigoObra = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        txtNombreObra = new javax.swing.JTextField();
+        txtEstanteObra = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        txtAutorObra = new javax.swing.JTextField();
+        txtPalabrasObra = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        txtISBNObra = new javax.swing.JFormattedTextField();
+        jLabel50 = new javax.swing.JLabel();
+        txtUnidadesObra = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        txtGeneroObra = new javax.swing.JTextField();
+        txtEdicionObra = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        Revistas = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         btnIngresarRev = new javax.swing.JButton();
@@ -107,7 +136,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txtISSNRev = new javax.swing.JFormattedTextField();
         txtNombreRev = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
+        CD = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         btnCancelarCd = new javax.swing.JButton();
@@ -128,7 +157,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         txtAnioCd = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         txtDuracionCd = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        Tesis = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         btnIngresarT = new javax.swing.JButton();
@@ -169,7 +198,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         tabsBar.setToolTipText("Libros");
         tabsBar.setMinimumSize(new java.awt.Dimension(58, 100));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        Libros.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -373,20 +402,20 @@ public class ItemsRegistro extends javax.swing.JFrame {
 
         txtCodigoLib.getAccessibleContext().setAccessibleName("");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout LibrosLayout = new javax.swing.GroupLayout(Libros);
+        Libros.setLayout(LibrosLayout);
+        LibrosLayout.setHorizontalGroup(
+            LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(LibrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        LibrosLayout.setVerticalGroup(
+            LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LibrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -396,9 +425,236 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        tabsBar.addTab("Libros", jPanel2);
+        tabsBar.addTab("Libros", Libros);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        Obras.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel42.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("Ingresar Obra");
+        jLabel42.setAlignmentY(0.0F);
+
+        jPanel14.setBackground(new java.awt.Color(204, 255, 255));
+
+        btnCancelarObra.setText("Cancelar");
+        btnCancelarObra.setName("btnCancelarLib"); // NOI18N
+        btnCancelarObra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarObraActionPerformed(evt);
+            }
+        });
+
+        btnIngresarObra.setText("Ingresar");
+        btnIngresarObra.setName("btnIngresarLib"); // NOI18N
+        btnIngresarObra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarObraActionPerformed(evt);
+            }
+        });
+
+        btnClearObra.setText("Vaciar campos");
+        btnClearObra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearObraActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnClearObra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(btnIngresarObra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(btnCancelarObra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnClearObra)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnCancelarObra)
+                    .addComponent(btnIngresarObra))
+                .addContainerGap())
+        );
+
+        jPanel15.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel43.setLabelFor(txtAutorLib);
+        jLabel43.setText("Autor");
+
+        txtEditorialObra.setName("txtEditorialLib"); // NOI18N
+
+        jLabel44.setLabelFor(txtEditorialLib);
+        jLabel44.setText("Editorial");
+
+        txtAnioObra.setName("txtAnioLib"); // NOI18N
+
+        jLabel45.setLabelFor(txtUnidadesLib);
+        jLabel45.setText("Unidades");
+
+        txtCodigoObra.setName("txtCodigoLib"); // NOI18N
+
+        jLabel46.setLabelFor(txtEstanteLib);
+        jLabel46.setText("Estante");
+
+        txtNombreObra.setName("txtNombreLib"); // NOI18N
+
+        txtEstanteObra.setName("txtEstanteLib"); // NOI18N
+
+        jLabel47.setLabelFor(txtEdicionLib);
+        jLabel47.setText("Edición");
+
+        txtAutorObra.setName("txtAutorLib"); // NOI18N
+
+        txtPalabrasObra.setName("txtPalabrasLib"); // NOI18N
+
+        jLabel48.setLabelFor(txtCodigoLib);
+        jLabel48.setText("Codigo");
+
+        jLabel49.setLabelFor(txtISBNLib);
+        jLabel49.setText("ISBN");
+
+        try {
+            txtISBNObra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-#-##-######-#")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtISBNObra.setName("txtISBNLib"); // NOI18N
+
+        jLabel50.setLabelFor(txtGeneroLib);
+        jLabel50.setText("Genero");
+
+        txtUnidadesObra.setName("txtUnidadesLib"); // NOI18N
+
+        jLabel51.setLabelFor(txtNombreLib);
+        jLabel51.setText("Nombre");
+
+        jLabel52.setLabelFor(txtAnioLib);
+        jLabel52.setText("Año de publicación");
+
+        txtGeneroObra.setName("txtGeneroLib"); // NOI18N
+
+        txtEdicionObra.setName("txtEdicionLib"); // NOI18N
+
+        jLabel53.setLabelFor(txtPalabrasLib);
+        jLabel53.setText("Palabras clave");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel49)
+                        .addGap(188, 188, 188))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel48)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel44))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtISBNObra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNombreObra)
+                                .addComponent(txtAutorObra)
+                                .addComponent(txtGeneroObra)
+                                .addComponent(txtCodigoObra)
+                                .addComponent(txtEditorialObra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 61, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtAnioObra)
+                    .addComponent(txtEdicionObra)
+                    .addComponent(txtUnidadesObra)
+                    .addComponent(txtEstanteObra)
+                    .addComponent(txtPalabrasObra, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48)
+                    .addComponent(jLabel52)
+                    .addComponent(txtAnioObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombreObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51)
+                    .addComponent(txtEdicionObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAutorObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43)
+                    .addComponent(txtUnidadesObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEstanteObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel46)
+                    .addComponent(txtGeneroObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPalabrasObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53)
+                    .addComponent(txtEditorialObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtISBNObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ObrasLayout = new javax.swing.GroupLayout(Obras);
+        Obras.setLayout(ObrasLayout);
+        ObrasLayout.setHorizontalGroup(
+            ObrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ObrasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        ObrasLayout.setVerticalGroup(
+            ObrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ObrasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        tabsBar.addTab("Obras", Obras);
+
+        Revistas.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -599,20 +855,20 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout RevistasLayout = new javax.swing.GroupLayout(Revistas);
+        Revistas.setLayout(RevistasLayout);
+        RevistasLayout.setHorizontalGroup(
+            RevistasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RevistasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        RevistasLayout.setVerticalGroup(
+            RevistasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RevistasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -621,9 +877,9 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        tabsBar.addTab("Revista", jPanel1);
+        tabsBar.addTab("Revistas", Revistas);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        CD.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel25.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -793,20 +1049,20 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CDLayout = new javax.swing.GroupLayout(CD);
+        CD.setLayout(CDLayout);
+        CDLayout.setHorizontalGroup(
+            CDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(CDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        CDLayout.setVerticalGroup(
+            CDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -815,9 +1071,9 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        tabsBar.addTab("CD", jPanel3);
+        tabsBar.addTab("CD", CD);
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        Tesis.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel33.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -984,20 +1240,20 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TesisLayout = new javax.swing.GroupLayout(Tesis);
+        Tesis.setLayout(TesisLayout);
+        TesisLayout.setHorizontalGroup(
+            TesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TesisLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        TesisLayout.setVerticalGroup(
+            TesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TesisLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1006,7 +1262,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        tabsBar.addTab("Tesis", jPanel4);
+        tabsBar.addTab("Tesis", Tesis);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1037,6 +1293,18 @@ public class ItemsRegistro extends javax.swing.JFrame {
         txtUnidadesLib.setText("");
         txtEstanteLib.setText("");
         txtPalabrasLib.setText("");
+//        LIMPIAR CAMPOS DE OBRA
+        txtCodigoObra.setText("");
+        txtNombreObra.setText("");
+        txtAutorObra.setText("");
+        txtGeneroObra.setText("");
+        txtEditorialObra.setText("");
+        txtISBNObra.setText("");
+        txtAnioObra.setText("");
+        txtEdicionObra.setText("");
+        txtUnidadesObra.setText("");
+        txtEstanteObra.setText("");
+        txtPalabrasObra.setText("");
 //        LIMPIAR CAMPOS DE REVISTA
         txtCodigoRev.setText("");
         txtNombreRev.setText("");
@@ -1116,16 +1384,37 @@ public class ItemsRegistro extends javax.swing.JFrame {
         this.clearInputFields();
     }//GEN-LAST:event_btnClearTesisActionPerformed
 
+    private void btnCancelarObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarObraActionPerformed
+        goBack();
+    }//GEN-LAST:event_btnCancelarObraActionPerformed
+
+    private void btnIngresarObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarObraActionPerformed
+        if (Registro.obra(txtCodigoObra, txtNombreObra, txtAutorObra, txtGeneroObra, txtEditorialObra, txtISBNObra, txtAnioObra, txtEdicionObra, txtUnidadesObra, txtEstanteObra, txtPalabrasObra))
+            this.clearInputFields();
+    }//GEN-LAST:event_btnIngresarObraActionPerformed
+
+    private void btnClearObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearObraActionPerformed
+        this.clearInputFields();
+    }//GEN-LAST:event_btnClearObraActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CD;
+    private javax.swing.JPanel Libros;
+    private javax.swing.JPanel Obras;
+    private javax.swing.JPanel Revistas;
+    private javax.swing.JPanel Tesis;
     private javax.swing.JButton btnCancelarCd;
     private javax.swing.JButton btnCancelarLib;
+    private javax.swing.JButton btnCancelarObra;
     private javax.swing.JButton btnCancelarRev;
     private javax.swing.JButton btnCancelarT;
     private javax.swing.JButton btnClearCd;
     private javax.swing.JButton btnClearLib;
+    private javax.swing.JButton btnClearObra;
     private javax.swing.JButton btnClearRev;
     private javax.swing.JButton btnClearTesis;
     private javax.swing.JButton btnIngresarLib;
+    private javax.swing.JButton btnIngresarObra;
     private javax.swing.JButton btnIngresarRev;
     private javax.swing.JButton btnIngresarT;
     private javax.swing.JButton btnIngresarcd;
@@ -1166,18 +1455,28 @@ public class ItemsRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1189,36 +1488,47 @@ public class ItemsRegistro extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tabsBar;
     private javax.swing.JTextField txtAnioCd;
     private javax.swing.JTextField txtAnioLib;
+    private javax.swing.JTextField txtAnioObra;
     private javax.swing.JTextField txtAutorCd;
     private javax.swing.JTextField txtAutorLib;
+    private javax.swing.JTextField txtAutorObra;
     private javax.swing.JTextField txtCodigoCd;
     private javax.swing.JTextField txtCodigoLib;
+    private javax.swing.JTextField txtCodigoObra;
     private javax.swing.JTextField txtCodigoRev;
     private javax.swing.JTextField txtCodigoT;
     private javax.swing.JTextField txtDuracionCd;
     private javax.swing.JTextField txtEdicionLib;
+    private javax.swing.JTextField txtEdicionObra;
     private javax.swing.JTextField txtEditorialLib;
+    private javax.swing.JTextField txtEditorialObra;
     private javax.swing.JTextField txtEditorialRev;
     private javax.swing.JTextField txtEstanteCd;
     private javax.swing.JTextField txtEstanteLib;
+    private javax.swing.JTextField txtEstanteObra;
     private javax.swing.JTextField txtEstanteRev;
     private javax.swing.JTextField txtFacultadT;
     private javax.swing.JTextField txtFechaT;
     private javax.swing.JTextField txtGeneroCd;
     private javax.swing.JTextField txtGeneroLib;
+    private javax.swing.JTextField txtGeneroObra;
     private javax.swing.JFormattedTextField txtISBNLib;
+    private javax.swing.JFormattedTextField txtISBNObra;
     private javax.swing.JFormattedTextField txtISSNRev;
     private javax.swing.JTextField txtInstitucionT;
     private javax.swing.JTextField txtNombreCd;
     private javax.swing.JTextField txtNombreLib;
+    private javax.swing.JTextField txtNombreObra;
     private javax.swing.JTextField txtNombreRev;
     private javax.swing.JTextField txtPaginasT;
     private javax.swing.JTextField txtPalabrasLib;
+    private javax.swing.JTextField txtPalabrasObra;
     private javax.swing.JTextField txtPalabrasRev;
     private javax.swing.JTextField txtTematicaRev;
     private javax.swing.JTextField txtTituloT;
     private javax.swing.JTextField txtUbicacionT;
     private javax.swing.JTextField txtUnidadesLib;
+    private javax.swing.JTextField txtUnidadesObra;
     private javax.swing.JTextField txtVolumenRev;
     // End of variables declaration//GEN-END:variables
 }
