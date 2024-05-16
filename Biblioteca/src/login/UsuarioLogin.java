@@ -41,6 +41,7 @@ public class UsuarioLogin extends javax.swing.JFrame {
     public static void unmount(){
         loginGUI.setVisible(false);
         loginGUI.dispose();
+        loginGUI = null;
     }
     
     private static void validarUsuario(JTextField Usuario, JPasswordField passwd) {

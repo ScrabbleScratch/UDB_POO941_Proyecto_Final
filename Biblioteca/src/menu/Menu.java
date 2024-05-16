@@ -10,8 +10,9 @@ package menu;
  * @author Migue, Mario
  */
 
-import registro.ItemsRegistro;
 import consulta.ItemsConsultar;
+import registro.PrestamoRegistro;
+import registro.ItemsRegistro;
 import configuracion.MenuUsuarios;
 import login.UsuarioLogin;
 
@@ -51,6 +52,7 @@ public class Menu extends javax.swing.JFrame {
     public static void unmount(){
         menuGUI.setVisible(false);
         menuGUI.dispose();
+        menuGUI = null;
     }
     
     /**
@@ -69,6 +71,7 @@ public class Menu extends javax.swing.JFrame {
         btnManageUsers = new javax.swing.JButton();
         btnRegisterItem = new javax.swing.JButton();
         btnQueryItems = new javax.swing.JButton();
+        btnRentItems = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         lblUserType = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
@@ -132,17 +135,27 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnRentItems.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnRentItems.setText("Prestamo de ejemplares");
+        btnRentItems.setName("btnConsultar"); // NOI18N
+        btnRentItems.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRentItemsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
+                .addContainerGap(143, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnManageUsers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnQueryItems, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegisterItem, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(154, Short.MAX_VALUE))
+                    .addComponent(btnRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRentItems, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,10 +163,12 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnQueryItems)
                 .addGap(18, 18, 18)
+                .addComponent(btnRentItems)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegisterItem)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageUsers)
-                .addContainerGap())
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
@@ -205,7 +220,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
@@ -244,11 +259,17 @@ public class Menu extends javax.swing.JFrame {
         UsuarioLogin.mount();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnRentItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentItemsActionPerformed
+        unmount();
+        PrestamoRegistro.mount();
+    }//GEN-LAST:event_btnRentItemsActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnManageUsers;
     private javax.swing.JButton btnQueryItems;
     private javax.swing.JButton btnRegisterItem;
+    private javax.swing.JButton btnRentItems;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

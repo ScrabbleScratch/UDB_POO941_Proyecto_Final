@@ -29,6 +29,7 @@ public class UsuarioRegistro extends javax.swing.JFrame {
     public static void unmount(){
         regUserGUI.setVisible(false);
         regUserGUI.dispose();
+        regUserGUI = null;
     }
     
     private static void goBack() {

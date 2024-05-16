@@ -44,6 +44,38 @@ public class Registro {
         return false;
     }
     
+    public static boolean prestamo(String category, String userId, String returnDate, String itemId){
+        try {
+            String catStr = category.toLowerCase();
+            String tableStr = catStr;
+            
+            if (!catStr.equals("tesis"))
+                tableStr = catStr + "s";
+            
+            String consulta = "INSERT INTO prestamos_" + tableStr + " "
+                    + "(usuario, fecha_devolucion, " + catStr + ") VALUES "
+                    + "(?, ?, ?);";
+            PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
+                     
+            ps.setInt(1, Integer.parseInt(userId));
+            ps.setString(2, returnDate);
+            ps.setInt(3, Integer.parseInt(itemId));
+            
+            int resultado = ps.executeUpdate();
+            
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(null, "Préstamo guardado");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al ingresar los datos");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+        }
+        
+        return false;
+    }
+    
     public static boolean libro(JTextField nombre, JTextField autor, JTextField genero, JTextField editorial, JFormattedTextField isbn, JTextField anio, JTextField edicion, JTextField unidad, JTextField estante, JTextField palabras) {
         try {
             String consulta = "INSERT INTO libros (nombre, autor, genero, editorial, isbn, "

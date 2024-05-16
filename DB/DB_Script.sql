@@ -33,9 +33,9 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `rolparams`;
 CREATE TABLE `rolparams` (
   `rol` INT NOT NULL,
-  `max_items` INT NOT NULL,
+  `max_prestamos` INT NOT NULL,
   `max_dias` INT NOT NULL,
-  `mora_diaria` INT NOT NULL,
+  `mora_diaria` FLOAT NOT NULL,
   UNIQUE KEY (`rol`),
   FOREIGN KEY (`rol`) REFERENCES `roles`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -76,7 +76,6 @@ CREATE TABLE `libros` (
   `anio_publicacion` int DEFAULT NULL,
   `edicion` int DEFAULT NULL,
   `unidades` int DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
   `estante` varchar(10) DEFAULT NULL,
   `palabras_clave` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -84,7 +83,7 @@ CREATE TABLE `libros` (
 
 LOCK TABLES `libros` WRITE;
 INSERT INTO `libros` VALUES
-	(1,'Ciencias Naturales','Santillana','Educativo','Santillana','123-4-56-789456-1',2010,13,3,1,'4','ciencias, educacion');
+	(1,'Ciencias Naturales','Santillana','Educativo','Santillana','123-4-56-789456-1',2010,13,3,'4','ciencias, educacion');
 UNLOCK TABLES;
 
 -- OBRAS
@@ -99,7 +98,6 @@ CREATE TABLE `obras` (
   `anio_publicacion` int DEFAULT NULL,
   `edicion` int DEFAULT NULL,
   `unidades` int DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
   `estante` varchar(10) DEFAULT NULL,
   `palabras_clave` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -107,7 +105,7 @@ CREATE TABLE `obras` (
 
 LOCK TABLES `obras` WRITE;
 INSERT INTO `obras` VALUES
-	(1,'Don Quijote','Miguel de Cervantes','Clasico','Santillana','123-4-56-789456-1',2010,13,3,1,'4','Clasico');
+	(1,'Don Quijote','Miguel de Cervantes','Clasico','Santillana','123-4-56-789456-1',2010,13,3,'4','Clasico');
 UNLOCK TABLES;
 
 -- REVISTAS
@@ -120,15 +118,15 @@ CREATE TABLE `revistas` (
   `issn` varchar(15) DEFAULT NULL,
   `tematica` varchar(100) DEFAULT NULL,
   `volumen` int DEFAULT NULL,
+  `unidades` int DEFAULT NULL,
   `estante` varchar(10) DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
   `palabras_clave` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `revistas` WRITE;
 INSERT INTO `revistas` VALUES
-	(1,'National Geographic','National Geograpic','Mensual','1234-5678','Ciencia',25,'2',1,'Ciencia');
+	(1,'National Geographic','National Geograpic','Mensual','1234-5678','Ciencia',25,3,'2','Ciencia');
 UNLOCK TABLES;
 
 -- CD
@@ -140,14 +138,14 @@ CREATE TABLE `cds` (
   `genero` varchar(100) DEFAULT NULL,
   `anio_publicacion` int DEFAULT NULL,
   `duracion` int DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
+  `unidades` int DEFAULT NULL,
   `estante` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `cds` WRITE;
 INSERT INTO `cds` VALUES
-	(1,'Hibryd Theory','Linking Park','Alternativo',2006,130,1,'6');
+	(1,'Hibryd Theory','Linking Park','Alternativo',2006,130,5,'6');
 UNLOCK TABLES;
 
 -- TESIS
@@ -159,14 +157,14 @@ CREATE TABLE `tesis` (
   `institucion` varchar(100) DEFAULT NULL,
   `facultad` varchar(100) DEFAULT NULL,
   `paginas` int DEFAULT NULL,
+  `unidades` int DEFAULT NULL,
   `estante` varchar(10) DEFAULT NULL,
-  `disponible` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `tesis` WRITE;
 INSERT INTO `tesis` VALUES
-	(1,'Tesis 1','Enero 2010','Universidad Don Bosco','Ingenieria',200,'1',1);
+	(1,'Tesis 1','Enero 2010','Universidad Don Bosco','Ingenieria',200,1,'1');
 UNLOCK TABLES;
 
 -- PRESTAMOS
@@ -177,6 +175,7 @@ CREATE TABLE `prestamos_libros` (
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
   `libro` INT NOT NULL,
+  `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`libro`) REFERENCES `libros`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -188,6 +187,7 @@ CREATE TABLE `prestamos_obras` (
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
   `obra` INT NOT NULL,
+  `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`obra`) REFERENCES `obras`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -199,6 +199,7 @@ CREATE TABLE `prestamos_revistas` (
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
   `revista` INT NOT NULL,
+  `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`revista`) REFERENCES `revistas`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -210,6 +211,7 @@ CREATE TABLE `prestamos_cds` (
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
   `cd` INT NOT NULL,
+  `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`cd`) REFERENCES `cds`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -221,6 +223,7 @@ CREATE TABLE `prestamos_tesis` (
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
   `tesis` INT NOT NULL,
+  `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`tesis`) REFERENCES `tesis`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

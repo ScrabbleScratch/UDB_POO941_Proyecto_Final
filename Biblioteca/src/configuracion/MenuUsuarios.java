@@ -32,6 +32,7 @@ public class MenuUsuarios extends javax.swing.JFrame {
     public static void unmount(){
         menuUsuariosGUI.setVisible(false);
         menuUsuariosGUI.dispose();
+        menuUsuariosGUI = null;
     }
     
     private static void goBack() {

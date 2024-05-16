@@ -34,6 +34,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
     public static void unmount(){
         itemConsGUI.setVisible(false);
         itemConsGUI.dispose();
+        itemConsGUI = null;
     }
     
     private static void goBack() {
@@ -42,11 +43,11 @@ public class ItemsConsultar extends javax.swing.JFrame {
     }
     
     private void cargarData() {
-        DefaultTableModel libroData = Consulta.libro();
-        DefaultTableModel obraData = Consulta.obra();
-        DefaultTableModel revistaData = Consulta.revista();
-        DefaultTableModel cdData = Consulta.cd();
-        DefaultTableModel tesisData = Consulta.tesis();
+        DefaultTableModel libroData = Consulta.librosData();
+        DefaultTableModel obraData = Consulta.obrasData();
+        DefaultTableModel revistaData = Consulta.revistasData();
+        DefaultTableModel cdData = Consulta.cdsData();
+        DefaultTableModel tesisData = Consulta.tesisData();
         
         this.tblLibro.setModel(libroData);
         this.tblObra.setModel(obraData);

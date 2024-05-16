@@ -35,6 +35,7 @@ public class UsuarioCambioContra extends javax.swing.JFrame {
     public static void unmount(){
         cambioContraGUI.setVisible(false);
         cambioContraGUI.dispose();
+        cambioContraGUI = null;
     }
     
     private static void goBack() {
