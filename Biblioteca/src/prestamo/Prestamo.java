@@ -108,7 +108,7 @@ public class Prestamo {
         try {
             String consulta = "SELECT "
                     + "P.id, I.titulo, P.fecha_prestamo, P.fecha_devolucion, "
-                    + "CONCAT('$', IF(DATEDIFF(CURDATE(), P.fecha_devolucion) > 0, DATEDIFF(CURDATE(), P.fecha_devolucion) * R.mora_diaria, 0)) AS mora_total "
+                    + "IF(DATEDIFF(CURDATE(), P.fecha_devolucion) > 0, DATEDIFF(CURDATE(), P.fecha_devolucion) * R.mora_diaria, 0) AS mora_total "
                     + "FROM prestamos_" + category + " AS P "
                     + "JOIN usuarios AS U ON U.id = P.usuario "
                     + "JOIN rolparams AS R ON R.rol = U.rol "
@@ -125,7 +125,7 @@ public class Prestamo {
                     rs.getString("titulo"),
                     Fechas.format(rs.getDate("fecha_prestamo").toLocalDate()),
                     Fechas.format(rs.getDate("fecha_devolucion").toLocalDate()),
-                    rs.getString("mora_total")
+                    "$" + rs.getString("mora_total")
                 };
                 results.add(rental);
             }

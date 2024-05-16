@@ -55,6 +55,7 @@ public class MenuPrestamos extends javax.swing.JFrame {
         btnQueryRentals = new javax.swing.JButton();
         btnRegisterRental = new javax.swing.JButton();
         btnReturnRental = new javax.swing.JButton();
+        btbCheckFee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +119,14 @@ public class MenuPrestamos extends javax.swing.JFrame {
             }
         });
 
+        btbCheckFee.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btbCheckFee.setText("Consultar mora");
+        btbCheckFee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbCheckFeeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -127,7 +136,8 @@ public class MenuPrestamos extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnQueryRentals, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(btnRegisterRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnReturnRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnReturnRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btbCheckFee, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -139,7 +149,9 @@ public class MenuPrestamos extends javax.swing.JFrame {
                 .addComponent(btnQueryRentals)
                 .addGap(18, 18, 18)
                 .addComponent(btnReturnRental)
-                .addGap(13, 13, 13))
+                .addGap(18, 18, 18)
+                .addComponent(btbCheckFee)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -160,7 +172,7 @@ public class MenuPrestamos extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(30, 30, 30)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
@@ -198,11 +210,17 @@ public class MenuPrestamos extends javax.swing.JFrame {
         PrestamoDevolucion.mount();
     }//GEN-LAST:event_btnReturnRentalActionPerformed
 
+    private void btbCheckFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbCheckFeeActionPerformed
+        unmount();
+        PrestamosMora.mount();
+    }//GEN-LAST:event_btbCheckFeeActionPerformed
+
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
         goBack();
     }//GEN-LAST:event_btnReturnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btbCheckFee;
     private javax.swing.JButton btnQueryRentals;
     private javax.swing.JButton btnRegisterRental;
     private javax.swing.JButton btnReturn;

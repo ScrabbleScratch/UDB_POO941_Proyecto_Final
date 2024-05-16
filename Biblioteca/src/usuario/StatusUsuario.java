@@ -14,6 +14,8 @@ package usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import java.util.HashMap;
+import java.util.Map;
 
 import database.Conexion;
 
@@ -26,6 +28,7 @@ public class StatusUsuario {
     public final boolean puedePrestar;
     public final float moraDiaria;
     public final int prestamosActivos;
+    public final Map<String, String[]> moraAcumulada;
     
     public StatusUsuario(String userId, String nombre, int rolId, int maxPrestamos, int maxDias, float moraDiaria, int prestamosActivos) {
         this.userId = userId;
@@ -33,9 +36,10 @@ public class StatusUsuario {
         this.rolId = rolId;
         this.maxPrestamos = maxPrestamos;
         this.maxDias = maxDias;
-        this.puedePrestar = prestamosActivos < maxPrestamos;
         this.moraDiaria = moraDiaria;
         this.prestamosActivos = prestamosActivos;
+        this.moraAcumulada = moraAcumulada(nombre);
+        this.puedePrestar = prestamosActivos < maxPrestamos;
     }
     
     public static StatusUsuario usuarioStatus(String username) {
@@ -71,6 +75,50 @@ public class StatusUsuario {
                     activeRents
                 );
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+        }
+        
+        return null;
+    }
+    
+    private static Map<String, String[]> moraAcumulada(String username) {
+        try {
+            Map<String, String[]> results = new HashMap<>();
+            String[] total = new String[] { "0", "0" };
+            for (String category : new String[] { "libros", "obras", "revistas", "cds", "tesis" }) {
+                String consulta = "SELECT "
+                            + "COUNT(id) AS prestamos_pendientes, "
+                            + "IF(SUM(mora_acumulada) > 0, SUM(mora_acumulada), 0) AS mora_total "
+                        + "FROM ( "
+                            + "SELECT P.id, P.fecha_devolucion, R.mora_diaria, "
+                                + "IF(DATEDIFF(CURDATE(), fecha_devolucion) > 0, DATEDIFF(CURDATE(), fecha_devolucion) * mora_diaria, 0) AS mora_acumulada "
+                            + "FROM prestamos_" + category + " AS P "
+                            + "JOIN usuarios AS U ON U.id = P.usuario "
+                            + "JOIN rolparams AS R ON R.rol = U.rol "
+                            + "JOIN libros AS I ON I.id = P.item_id "
+                            + "WHERE U.nombre = ? AND P.fecha_devuelto IS NULL "
+                        + ") AS P "
+                        + "WHERE P.mora_acumulada > 0;";
+                PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
+                ps.setString(1, username);
+                ResultSet rs = ps.executeQuery();
+                
+                String[] catFee = new String[2];
+                if (rs.next()) {
+                    catFee[0] = rs.getString("prestamos_pendientes");
+                    catFee[1] = "$" + rs.getString("mora_total");
+                    
+                    total[0] = Integer.toString(Integer.parseInt(total[0]) + rs.getInt("prestamos_pendientes"));
+                    total[1] = Double.toString(Double.parseDouble(total[1]) + rs.getDouble("mora_total"));
+                }
+                
+                results.put(category, catFee);
+            }
+            total[1] = "$" + total[1];
+            results.put("total", total);
+            
+            return results;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e.toString());
         }
