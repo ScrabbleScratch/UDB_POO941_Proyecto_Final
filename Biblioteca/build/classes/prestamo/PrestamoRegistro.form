@@ -75,7 +75,7 @@
               <Font name="Verdana" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Registro de pr&#xe9;stamo"/>
+            <Property name="text" type="java.lang.String" value="Registro de Pr&#xe9;stamo"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="pnlInputs">

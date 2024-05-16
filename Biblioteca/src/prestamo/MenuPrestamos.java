@@ -54,6 +54,7 @@ public class MenuPrestamos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnQueryRentals = new javax.swing.JButton();
         btnRegisterRental = new javax.swing.JButton();
+        btnReturnRental = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,16 +110,25 @@ public class MenuPrestamos extends javax.swing.JFrame {
             }
         });
 
+        btnReturnRental.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnReturnRental.setText("Devolver préstamo");
+        btnReturnRental.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnRentalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(135, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnQueryRentals, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(btnRegisterRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(135, Short.MAX_VALUE))
+                    .addComponent(btnRegisterRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReturnRental, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,14 +137,16 @@ public class MenuPrestamos extends javax.swing.JFrame {
                 .addComponent(btnRegisterRental)
                 .addGap(18, 18, 18)
                 .addComponent(btnQueryRentals)
-                .addGap(54, 54, 54))
+                .addGap(18, 18, 18)
+                .addComponent(btnReturnRental)
+                .addGap(13, 13, 13))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,6 +193,11 @@ public class MenuPrestamos extends javax.swing.JFrame {
         PrestamosConsultar.mount();
     }//GEN-LAST:event_btnQueryRentalsActionPerformed
 
+    private void btnReturnRentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnRentalActionPerformed
+        unmount();
+        PrestamoDevolucion.mount();
+    }//GEN-LAST:event_btnReturnRentalActionPerformed
+
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
         goBack();
     }//GEN-LAST:event_btnReturnActionPerformed
@@ -189,6 +206,7 @@ public class MenuPrestamos extends javax.swing.JFrame {
     private javax.swing.JButton btnQueryRentals;
     private javax.swing.JButton btnRegisterRental;
     private javax.swing.JButton btnReturn;
+    private javax.swing.JButton btnReturnRental;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

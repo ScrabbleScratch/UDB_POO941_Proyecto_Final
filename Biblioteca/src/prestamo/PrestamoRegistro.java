@@ -12,12 +12,12 @@ package prestamo;
  */
 
 import java.awt.Color;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime; 
 import javax.swing.JOptionPane;
+import java.time.LocalDateTime;
 
 import items.Consulta;
 import usuario.StatusUsuario;
+import utilidades.Fechas;
 
 public class PrestamoRegistro extends javax.swing.JFrame {
     private static PrestamoRegistro prestamoGUI;
@@ -48,13 +48,6 @@ public class PrestamoRegistro extends javax.swing.JFrame {
     private static void goBack() {
         unmount();
         MenuPrestamos.mount();
-    }
-    
-    public static String joinArray(Object[] arr, String delimiter) {
-        StringBuilder sb = new StringBuilder();
-        for (Object obj : arr)
-                sb.append(obj.toString()).append(delimiter);
-        return sb.substring(0, sb.length() - 1);
     }
 
     /**
@@ -94,7 +87,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Registro de préstamo");
+        lblTitulo.setText("Registro de Préstamo");
 
         pnlInputs.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -387,10 +380,6 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbItemIdItemStateChanged
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        goBack();
-    }//GEN-LAST:event_btnCancelActionPerformed
-
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
         String username = this.txtUsername.getText();
         this.userStatus = StatusUsuario.usuarioStatus(username);
@@ -407,13 +396,12 @@ public class PrestamoRegistro extends javax.swing.JFrame {
             
 //            GENERATE RETURN DATE FOR THE USER
             this.lblDateHelper.setText("Máximo " + this.userStatus.maxDias + " días.");
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            this.returnDate = dtf.format(LocalDateTime.now().plusDays(this.userStatus.maxDias));
+            
+            this.returnDate = Fechas.format(LocalDateTime.now().plusDays(this.userStatus.maxDias));
             this.txtReturnDate.setText(this.returnDate);
             this.txtReturnDate.setEnabled(true);
             this.btnRegister.setEnabled(true);
         } else {
-            this.userStatus = null;
             this.lblUserExists.setText("❌");
             this.lblUserExists.setForeground(Color.red);
             this.lblDateHelper.setText("");
@@ -433,6 +421,10 @@ public class PrestamoRegistro extends javax.swing.JFrame {
             mount();
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        goBack();
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;

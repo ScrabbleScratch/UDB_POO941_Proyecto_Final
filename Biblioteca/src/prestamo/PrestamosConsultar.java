@@ -41,11 +41,11 @@ public class PrestamosConsultar extends javax.swing.JFrame {
     }
     
     private void cargarData() {
-        DefaultTableModel prestamosLibro = Prestamo.prestamosCategoria(Prestamo.Categoria.LIBROS);
-        DefaultTableModel prestamosObras = Prestamo.prestamosCategoria(Prestamo.Categoria.OBRAS);
-        DefaultTableModel prestamosRevistas = Prestamo.prestamosCategoria(Prestamo.Categoria.REVISTAS);
-        DefaultTableModel prestamosCds = Prestamo.prestamosCategoria(Prestamo.Categoria.CDS);
-        DefaultTableModel prestamosTesis = Prestamo.prestamosCategoria(Prestamo.Categoria.TESIS);
+        DefaultTableModel prestamosLibro = Prestamo.prestamosCategoria("libros");
+        DefaultTableModel prestamosObras = Prestamo.prestamosCategoria("obras");
+        DefaultTableModel prestamosRevistas = Prestamo.prestamosCategoria("revistas");
+        DefaultTableModel prestamosCds = Prestamo.prestamosCategoria("cds");
+        DefaultTableModel prestamosTesis = Prestamo.prestamosCategoria("tesis");
         
         this.tblLibro.setModel(prestamosLibro);
         this.tblObra.setModel(prestamosObras);
