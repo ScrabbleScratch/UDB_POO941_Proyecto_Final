@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 import menu.Menu;
-import consulta.Consulta;
+import items.Consulta;
 import usuario.StatusUsuario;
 
 public class PrestamoRegistro extends javax.swing.JFrame {
@@ -312,19 +312,19 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         String[] ids = null;
         switch (this.itemCategory) {
             case "Libro":
-                ids = Consulta.librosIds();
+                ids = Consulta.categoryIds(Consulta.Categoria.LIBROS);
                 break;
             case "Obra":
-                ids = Consulta.obrasIds();
+                ids = Consulta.categoryIds(Consulta.Categoria.OBRAS);
                 break;
             case "Revista":
-                ids = Consulta.revistasIds();
+                ids = Consulta.categoryIds(Consulta.Categoria.REVISTAS);
                 break;
             case "CD":
-                ids = Consulta.cdsIds();
+                ids = Consulta.categoryIds(Consulta.Categoria.CDS);
                 break;
             case "Tesis":
-                ids = Consulta.tesisIds();
+                ids = Consulta.categoryIds(Consulta.Categoria.TESIS);
                 break;
             default:
                 break;

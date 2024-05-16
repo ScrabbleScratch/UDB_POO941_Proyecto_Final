@@ -10,9 +10,9 @@ package menu;
  * @author Migue, Mario
  */
 
-import consulta.ItemsConsultar;
+import items.ItemsConsultar;
 import prestamo.MenuPrestamos;
-import registro.ItemsRegistro;
+import items.ItemsRegistro;
 import usuario.MenuUsuarios;
 import usuario.UsuarioLogin;
 
