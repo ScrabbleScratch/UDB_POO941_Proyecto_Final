@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package registro;
+package prestamo;
 
 /**
  *
@@ -18,14 +18,13 @@ import javax.swing.JOptionPane;
 
 import menu.Menu;
 import consulta.Consulta;
-import consulta.StatusUsuario;
+import usuario.StatusUsuario;
 
 public class PrestamoRegistro extends javax.swing.JFrame {
     private static PrestamoRegistro prestamoGUI;
     
     private String itemCategory;
     private String itemId;
-    private boolean itemAvailable;
     private StatusUsuario userStatus;
     private String returnDate;
 
@@ -372,12 +371,10 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         if (itemData != null && itemData.length == 2) {
             this.txtItemDesc.setText(itemData[0]);
             if (itemData[1].equals("Si")) {
-                this.itemAvailable = true;
                 this.txtItemAvail.setText("✔");
                 this.txtItemAvail.setBackground(Color.green);
                 this.txtUsername.setEnabled(true);
             } else if (itemData[1].equals("No")) {
-                this.itemAvailable = false;
                 this.txtItemAvail.setText("❌");
                 this.txtItemAvail.setBackground(Color.red);
                 this.txtUsername.setEnabled(false);
@@ -391,7 +388,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
         String username = this.txtUsername.getText();
-        this.userStatus = Consulta.usuarioStatus(username);
+        this.userStatus = StatusUsuario.usuarioStatus(username);
         if (this.userStatus != null) {
             this.lblUserExists.setText("✔");
             this.lblUserExists.setForeground(Color.green);
@@ -437,7 +434,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         if (confirm != 0)
             return;
         
-        if (Registro.prestamo(this.itemCategory, this.userStatus.userId, this.returnDate, this.itemId)) {
+        if (Prestamo.registrar(this.itemCategory, this.userStatus.userId, this.returnDate, this.itemId)) {
             unmount();
             mount();
         }

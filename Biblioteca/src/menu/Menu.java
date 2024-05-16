@@ -11,10 +11,10 @@ package menu;
  */
 
 import consulta.ItemsConsultar;
-import registro.PrestamoRegistro;
+import prestamo.MenuPrestamos;
 import registro.ItemsRegistro;
-import configuracion.MenuUsuarios;
-import login.UsuarioLogin;
+import usuario.MenuUsuarios;
+import usuario.UsuarioLogin;
 
 public class Menu extends javax.swing.JFrame {
     private static Menu menuGUI;
@@ -71,7 +71,7 @@ public class Menu extends javax.swing.JFrame {
         btnManageUsers = new javax.swing.JButton();
         btnRegisterItem = new javax.swing.JButton();
         btnQueryItems = new javax.swing.JButton();
-        btnRentItems = new javax.swing.JButton();
+        btnRentals = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         lblUserType = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
@@ -135,12 +135,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnRentItems.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        btnRentItems.setText("Prestamo de ejemplares");
-        btnRentItems.setName("btnConsultar"); // NOI18N
-        btnRentItems.addActionListener(new java.awt.event.ActionListener() {
+        btnRentals.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnRentals.setText("Préstamos");
+        btnRentals.setName("btnConsultar"); // NOI18N
+        btnRentals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRentItemsActionPerformed(evt);
+                btnRentalsActionPerformed(evt);
             }
         });
 
@@ -149,13 +149,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(153, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnManageUsers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnQueryItems, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRentItems, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(144, Short.MAX_VALUE))
+                    .addComponent(btnRentals, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +163,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnQueryItems)
                 .addGap(18, 18, 18)
-                .addComponent(btnRentItems)
+                .addComponent(btnRentals)
                 .addGap(18, 18, 18)
                 .addComponent(btnRegisterItem)
                 .addGap(18, 18, 18)
@@ -259,17 +259,17 @@ public class Menu extends javax.swing.JFrame {
         UsuarioLogin.mount();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnRentItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentItemsActionPerformed
+    private void btnRentalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentalsActionPerformed
         unmount();
-        PrestamoRegistro.mount();
-    }//GEN-LAST:event_btnRentItemsActionPerformed
+        MenuPrestamos.mount();
+    }//GEN-LAST:event_btnRentalsActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnManageUsers;
     private javax.swing.JButton btnQueryItems;
     private javax.swing.JButton btnRegisterItem;
-    private javax.swing.JButton btnRentItems;
+    private javax.swing.JButton btnRentals;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

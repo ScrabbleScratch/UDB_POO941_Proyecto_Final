@@ -116,14 +116,14 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="143" max="32767" attributes="0"/>
+                      <EmptySpace pref="153" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="btnManageUsers" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnQueryItems" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRegisterItem" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnRentItems" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnRentals" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="144" max="32767" attributes="0"/>
+                      <EmptySpace pref="154" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -133,7 +133,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnQueryItems" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRentItems" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRentals" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnRegisterItem" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -180,16 +180,16 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQueryItemsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnRentItems">
+            <Component class="javax.swing.JButton" name="btnRentals">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Prestamo de ejemplares"/>
+                <Property name="text" type="java.lang.String" value="Pr&#xe9;stamos"/>
                 <Property name="name" type="java.lang.String" value="btnConsultar" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRentItemsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRentalsActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

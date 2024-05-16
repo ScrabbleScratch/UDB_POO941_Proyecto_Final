@@ -3,16 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-package configuracion;
+package usuario;
 
 /**
  *
  * @author Mario
  */
 
-
 import menu.Menu;
-import registro.UsuarioRegistro;
 
 public class MenuUsuarios extends javax.swing.JFrame {
     private static MenuUsuarios menuUsuariosGUI;

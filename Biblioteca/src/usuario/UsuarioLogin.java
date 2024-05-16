@@ -3,20 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-package login;
+package usuario;
 
 /**
  *
  * @author Mario
  */
 
-import menu.Menu;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import menu.Menu;
 import database.Conexion;
 
 public class UsuarioLogin extends javax.swing.JFrame {

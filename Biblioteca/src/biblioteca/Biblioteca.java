@@ -10,7 +10,7 @@ package biblioteca;
  * @author Mario
  */
 
-import login.UsuarioLogin;
+import usuario.UsuarioLogin;
 
 public class Biblioteca {
 
