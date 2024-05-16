@@ -336,7 +336,7 @@ public class PrestamoDevolucion extends javax.swing.JFrame {
         this.prestamoId = prestamo[0];
         
         this.txtReturnFee.setText(prestamo[4]);
-        if (prestamo[4].equals("$0"))
+        if (prestamo[4].equals("$0.0"))
             this.txtReturnFee.setBackground(Color.green);
         else
             this.txtReturnFee.setBackground(Color.red);

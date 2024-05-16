@@ -25,10 +25,12 @@ public class StatusUsuario {
     public final int rolId;
     public final int maxPrestamos;
     public final int maxDias;
-    public final boolean puedePrestar;
     public final float moraDiaria;
     public final int prestamosActivos;
     public final Map<String, String[]> moraAcumulada;
+    public final boolean limiteExcedido;
+    public final boolean tieneMora;
+    public final boolean puedePrestar;
     
     public StatusUsuario(String userId, String nombre, int rolId, int maxPrestamos, int maxDias, float moraDiaria, int prestamosActivos) {
         this.userId = userId;
@@ -39,7 +41,9 @@ public class StatusUsuario {
         this.moraDiaria = moraDiaria;
         this.prestamosActivos = prestamosActivos;
         this.moraAcumulada = moraAcumulada(nombre);
-        this.puedePrestar = prestamosActivos < maxPrestamos;
+        this.limiteExcedido = prestamosActivos >= maxPrestamos;
+        this.tieneMora = !this.moraAcumulada.get("total")[0].equals("0");
+        this.puedePrestar = this.limiteExcedido || this.tieneMora;
     }
     
     public static StatusUsuario usuarioStatus(String username) {

@@ -12,7 +12,6 @@ package prestamo;
  */
 
 import java.awt.Color;
-import java.util.List;
 
 import usuario.StatusUsuario;
 

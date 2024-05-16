@@ -387,7 +387,10 @@ public class PrestamoRegistro extends javax.swing.JFrame {
             this.lblUserExists.setText("✔");
             this.lblUserExists.setForeground(Color.green);
             
-            if (!this.userStatus.puedePrestar) {
+            if (this.userStatus.tieneMora) {
+                this.lblUserHelper.setText("Tiene mora pendiente!");
+                return;
+            } else if (this.userStatus.limiteExcedido) {
                 this.lblUserHelper.setText("Límite de préstamos excedido!");
                 return;
             } else {
