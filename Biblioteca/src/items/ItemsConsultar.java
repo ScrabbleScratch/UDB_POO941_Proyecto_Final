@@ -43,11 +43,11 @@ public class ItemsConsultar extends javax.swing.JFrame {
     }
     
     private void cargarData() {
-        DefaultTableModel libroData = Consulta.dataCategoria(Consulta.Categoria.LIBROS);
-        DefaultTableModel obraData = Consulta.dataCategoria(Consulta.Categoria.OBRAS);
-        DefaultTableModel revistaData = Consulta.dataCategoria(Consulta.Categoria.REVISTAS);
-        DefaultTableModel cdData = Consulta.dataCategoria(Consulta.Categoria.CDS);
-        DefaultTableModel tesisData = Consulta.dataCategoria(Consulta.Categoria.TESIS);
+        DefaultTableModel libroData = Consulta.dataCategoria("libros");
+        DefaultTableModel obraData = Consulta.dataCategoria("obras");
+        DefaultTableModel revistaData = Consulta.dataCategoria("revistas");
+        DefaultTableModel cdData = Consulta.dataCategoria("cds");
+        DefaultTableModel tesisData = Consulta.dataCategoria("tesis");
         
         this.tblLibro.setModel(libroData);
         this.tblObra.setModel(obraData);
@@ -120,8 +120,8 @@ public class ItemsConsultar extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tabsBar.addTab("Libros", jPanel2);
@@ -317,7 +317,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tabsBar, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tabsBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
         );

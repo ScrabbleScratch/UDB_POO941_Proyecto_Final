@@ -149,7 +149,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         pnlInputsLayout.setHorizontalGroup(
             pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInputsLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(pnlInputsLayout.createSequentialGroup()
@@ -187,7 +187,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
                             .addComponent(lblReturnDate)
                             .addComponent(txtReturnDate, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                             .addComponent(lblDateHelper))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInputsLayout.setVerticalGroup(
             pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,11 +250,11 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         pnlBottomButtonsLayout.setHorizontalGroup(
             pnlBottomButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBottomButtonsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(197, Short.MAX_VALUE)
                 .addComponent(btnRegister)
                 .addGap(54, 54, 54)
                 .addComponent(btnCancel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         pnlBottomButtonsLayout.setVerticalGroup(
             pnlBottomButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,9 +292,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,19 +308,19 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         String[] ids = null;
         switch (this.itemCategory) {
             case "Libro":
-                ids = Consulta.idsCategoria(Consulta.Categoria.LIBROS);
+                ids = Consulta.idsCategoria("libros");
                 break;
             case "Obra":
-                ids = Consulta.idsCategoria(Consulta.Categoria.OBRAS);
+                ids = Consulta.idsCategoria("obras");
                 break;
             case "Revista":
-                ids = Consulta.idsCategoria(Consulta.Categoria.REVISTAS);
+                ids = Consulta.idsCategoria("revistas");
                 break;
             case "CD":
-                ids = Consulta.idsCategoria(Consulta.Categoria.CDS);
+                ids = Consulta.idsCategoria("cds");
                 break;
             case "Tesis":
-                ids = Consulta.idsCategoria(Consulta.Categoria.TESIS);
+                ids = Consulta.idsCategoria("tesis");
                 break;
             default:
                 break;

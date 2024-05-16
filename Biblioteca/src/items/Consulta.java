@@ -22,17 +22,9 @@ import database.Conexion;
 import utilidades.Tablas;
 
 public class Consulta {
-    public enum Categoria {
-        LIBROS,
-        OBRAS,
-        REVISTAS,
-        CDS,
-        TESIS
-    };
-    
-    public static DefaultTableModel dataCategoria(Categoria category) {
+    public static DefaultTableModel dataCategoria(String category) {
         try {
-            String consulta = "SELECT * FROM " + category.toString() + ";";
+            String consulta = "SELECT * FROM " + category + ";";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
             return Tablas.buildTableModelFromResultSet(rs);
@@ -43,7 +35,7 @@ public class Consulta {
         return null;
     }
     
-    public static String[] idsCategoria(Categoria category) {
+    public static String[] idsCategoria(String category) {
         try {
             String consulta = "SELECT id FROM " + category.toString() + ";";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
