@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package items;
+package prestamo;
 
 /**
  *
@@ -13,21 +13,19 @@ package items;
 
 import javax.swing.table.DefaultTableModel;
 
-import menu.Menu;
-
-public class ItemsConsultar extends javax.swing.JFrame {
-    private static ItemsConsultar itemConsGUI;
+public class PrestamosConsultar extends javax.swing.JFrame {
+    private static PrestamosConsultar itemConsGUI;
 
     /**
      * Creates new form ConsultarForm
      */
-    public ItemsConsultar() {
+    public PrestamosConsultar() {
         initComponents();
         cargarData();
     }
 
     public static void mount() {
-        itemConsGUI = new ItemsConsultar();
+        itemConsGUI = new PrestamosConsultar();
         itemConsGUI.setVisible(true);
     }
     
@@ -39,21 +37,21 @@ public class ItemsConsultar extends javax.swing.JFrame {
     
     private static void goBack() {
         unmount();
-        Menu.mount();
+        MenuPrestamos.mount();
     }
     
     private void cargarData() {
-        DefaultTableModel libroData = Consulta.dataCategoria(Consulta.Categoria.LIBROS);
-        DefaultTableModel obraData = Consulta.dataCategoria(Consulta.Categoria.OBRAS);
-        DefaultTableModel revistaData = Consulta.dataCategoria(Consulta.Categoria.REVISTAS);
-        DefaultTableModel cdData = Consulta.dataCategoria(Consulta.Categoria.CDS);
-        DefaultTableModel tesisData = Consulta.dataCategoria(Consulta.Categoria.TESIS);
+        DefaultTableModel prestamosLibro = Prestamo.prestamosCategoria(Prestamo.Categoria.LIBROS);
+        DefaultTableModel prestamosObras = Prestamo.prestamosCategoria(Prestamo.Categoria.OBRAS);
+        DefaultTableModel prestamosRevistas = Prestamo.prestamosCategoria(Prestamo.Categoria.REVISTAS);
+        DefaultTableModel prestamosCds = Prestamo.prestamosCategoria(Prestamo.Categoria.CDS);
+        DefaultTableModel prestamosTesis = Prestamo.prestamosCategoria(Prestamo.Categoria.TESIS);
         
-        this.tblLibro.setModel(libroData);
-        this.tblObra.setModel(obraData);
-        this.tblRevista.setModel(revistaData);
-        this.tblCd.setModel(cdData);
-        this.tblTesis.setModel(tesisData);
+        this.tblLibro.setModel(prestamosLibro);
+        this.tblObra.setModel(prestamosObras);
+        this.tblRevista.setModel(prestamosRevistas);
+        this.tblCd.setModel(prestamosCds);
+        this.tblTesis.setModel(prestamosTesis);
     }
     
     /**
@@ -99,7 +97,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Consultar Libros");
+        jLabel2.setText("Consultar Prestamos de Libros");
         jLabel2.setAlignmentY(0.0F);
 
         jScrollPane1.setViewportView(tblLibro);
@@ -130,7 +128,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Consultar Obras");
+        jLabel3.setText("Consultar Prestamos de Obras");
         jLabel3.setAlignmentY(0.0F);
 
         jScrollPane5.setViewportView(tblObra);
@@ -161,7 +159,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Consultar Revista");
+        jLabel5.setText("Consultar Prestamos de Revista");
 
         tblRevista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,7 +200,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Consultar CD");
+        jLabel25.setText("Consultar Prestamos de CD");
 
         tblCd.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -243,7 +241,7 @@ public class ItemsConsultar extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("Consultar Tesis");
+        jLabel33.setText("Consultar Prestamos de Tesis");
 
         tblTesis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

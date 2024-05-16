@@ -292,7 +292,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         txtUnidadesLib.setName("txtUnidadesLib"); // NOI18N
 
         jLabel3.setLabelFor(txtNombreLib);
-        jLabel3.setText("Nombre");
+        jLabel3.setText("Tíitulo");
 
         jLabel9.setLabelFor(txtAnioLib);
         jLabel9.setText("Año de publicación");
@@ -520,7 +520,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         txtUnidadesObra.setName("txtUnidadesLib"); // NOI18N
 
         jLabel51.setLabelFor(txtNombreLib);
-        jLabel51.setText("Nombre");
+        jLabel51.setText("Tíitulo");
 
         jLabel52.setLabelFor(txtAnioLib);
         jLabel52.setText("Año de publicación");
@@ -739,7 +739,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         jLabel20.setText("Tematica");
 
         jLabel16.setLabelFor(txtNombreRev);
-        jLabel16.setText("Nombre");
+        jLabel16.setText("Tíitulo");
 
         try {
             txtISSNRev.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
@@ -918,7 +918,7 @@ public class ItemsRegistro extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel27.setLabelFor(txtNombreCd);
-        jLabel27.setText("Nombre");
+        jLabel27.setText("Tíitulo");
 
         jLabel29.setLabelFor(txtGeneroCd);
         jLabel29.setText("Genero");

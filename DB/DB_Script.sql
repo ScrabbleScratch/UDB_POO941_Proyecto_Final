@@ -68,7 +68,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `libros`;
 CREATE TABLE `libros` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `autor` varchar(100) DEFAULT NULL,
   `genero` varchar(100) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
@@ -90,7 +90,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `obras`;
 CREATE TABLE `obras` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `autor` varchar(100) DEFAULT NULL,
   `genero` varchar(100) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
@@ -112,7 +112,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `revistas`;
 CREATE TABLE `revistas` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
   `frecuencia` varchar(100) DEFAULT NULL,
   `issn` varchar(15) DEFAULT NULL,
@@ -133,7 +133,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `cds`;
 CREATE TABLE `cds` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `autor` varchar(100) DEFAULT NULL,
   `genero` varchar(100) DEFAULT NULL,
   `anio_publicacion` int DEFAULT NULL,
@@ -152,7 +152,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `tesis`;
 CREATE TABLE `tesis` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `fecha_publicacion` varchar(100) DEFAULT NULL,
   `institucion` varchar(100) DEFAULT NULL,
   `facultad` varchar(100) DEFAULT NULL,
@@ -172,58 +172,58 @@ DROP TABLE IF EXISTS `prestamos_libros`;
 CREATE TABLE `prestamos_libros` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
+  `item_id` INT NOT NULL,
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
-  `libro` INT NOT NULL,
   `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`libro`) REFERENCES `libros`(`id`)
+  FOREIGN KEY (`item_id`) REFERENCES `libros`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `prestamos_obras`;
 CREATE TABLE `prestamos_obras` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
+  `item_id` INT NOT NULL,
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
-  `obra` INT NOT NULL,
   `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`obra`) REFERENCES `obras`(`id`)
+  FOREIGN KEY (`item_id`) REFERENCES `obras`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `prestamos_revistas`;
 CREATE TABLE `prestamos_revistas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
+  `item_id` INT NOT NULL,
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
-  `revista` INT NOT NULL,
   `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`revista`) REFERENCES `revistas`(`id`)
+  FOREIGN KEY (`item_id`) REFERENCES `revistas`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `prestamos_cds`;
 CREATE TABLE `prestamos_cds` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
+  `item_id` INT NOT NULL,
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
-  `cd` INT NOT NULL,
   `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`cd`) REFERENCES `cds`(`id`)
+  FOREIGN KEY (`item_id`) REFERENCES `cds`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `prestamos_tesis`;
 CREATE TABLE `prestamos_tesis` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
+  `item_id` INT NOT NULL,
   `fecha_prestamo` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   `fecha_devolucion` TIMESTAMP DEFAULT NULL,
-  `tesis` INT NOT NULL,
   `fecha_devuelto` TIMESTAMP DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`tesis`) REFERENCES `tesis`(`id`)
+  FOREIGN KEY (`item_id`) REFERENCES `tesis`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

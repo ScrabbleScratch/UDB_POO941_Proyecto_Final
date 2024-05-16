@@ -11,21 +11,31 @@ package prestamo;
  */
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import database.Conexion;
+import utilidades.Tablas;
 
 public class Prestamo {
+    public enum Categoria {
+        LIBROS,
+        OBRAS,
+        REVISTAS,
+        CDS,
+        TESIS
+    };
+    
     public static boolean registrar(String category, String userId, String returnDate, String itemId){
         try {
-            String catStr = category.toLowerCase();
-            String tableStr = catStr;
+            String tableStr = category.toLowerCase();
             
-            if (!catStr.equals("tesis"))
-                tableStr = catStr + "s";
+            if (!category.equals("Tesis"))
+                tableStr = tableStr.toLowerCase() + "s";
             
             String consulta = "INSERT INTO prestamos_" + tableStr + " "
-                    + "(usuario, fecha_devolucion, " + catStr + ") VALUES "
+                    + "(usuario, fecha_devolucion, item_id) VALUES "
                     + "(?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
                      
@@ -46,5 +56,26 @@ public class Prestamo {
         }
         
         return false;
+    }
+    
+    public static DefaultTableModel prestamosCategoria(Categoria category) {
+        try {
+            String consulta = "SELECT "
+                    + "P.id, U.nombre, I.titulo, P.fecha_prestamo, P.fecha_devolucion, "
+                    + "IF(P.fecha_devuelto IS NOT NULL, 'SI', 'NO') AS devuelto, "
+                    + "IF(DATEDIFF(CURDATE(), P.fecha_devolucion) > 0, 'SI', 'NO') AS limite_excedido "
+                    + "FROM prestamos_" + category.toString() + " AS P "
+                    + "JOIN usuarios AS U ON U.id = P.usuario "
+                    + "JOIN rolparams AS R ON R.rol = U.rol "
+                    + "JOIN " + category.toString() + " AS I ON I.id = P.item_id "
+                    + "WHERE P.fecha_devuelto IS NULL;";
+            PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
+            ResultSet rs = ps.executeQuery();
+            return Tablas.buildTableModelFromResultSet(rs);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+        }
+        
+        return null;
     }
 }

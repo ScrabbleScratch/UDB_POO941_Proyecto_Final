@@ -93,7 +93,6 @@ public class MenuPrestamos extends javax.swing.JFrame {
 
         btnQueryRentals.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnQueryRentals.setText("Consultar préstamos");
-        btnQueryRentals.setEnabled(false);
         btnQueryRentals.setName("btnIngresar"); // NOI18N
         btnQueryRentals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +177,8 @@ public class MenuPrestamos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegisterRentalActionPerformed
 
     private void btnQueryRentalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQueryRentalsActionPerformed
-        // TODO add your handling code here:
+        unmount();
+        PrestamosConsultar.mount();
     }//GEN-LAST:event_btnQueryRentalsActionPerformed
 
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed

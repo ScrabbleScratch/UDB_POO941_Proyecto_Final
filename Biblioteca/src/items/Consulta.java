@@ -30,7 +30,7 @@ public class Consulta {
         TESIS
     };
     
-    public static DefaultTableModel categoryData(Categoria category) {
+    public static DefaultTableModel dataCategoria(Categoria category) {
         try {
             String consulta = "SELECT * FROM " + category.toString() + ";";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
@@ -43,7 +43,7 @@ public class Consulta {
         return null;
     }
     
-    public static String[] categoryIds(Categoria category) {
+    public static String[] idsCategoria(Categoria category) {
         try {
             String consulta = "SELECT id FROM " + category.toString() + ";";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
@@ -65,15 +65,15 @@ public class Consulta {
     public static String[] librosDescriptiveStr(String id) {
         try {
             String consulta = "SELECT "
-                    + "CONCAT(A.nombre, ' | ', A.autor, ' | ', A.editorial) AS 'descripcion', "
+                    + "CONCAT(A.titulo, ' | ', A.autor, ' | ', A.editorial) AS 'descripcion', "
                     + "IF(P.activos IS NULL OR A.unidades > P.activos, 'Si', 'No') AS 'disponibilidad' "
                     + "FROM libros AS A "
                     + "LEFT JOIN ( "
-                        + "SELECT libro, COUNT(*) AS activos "
+                        + "SELECT item_id, COUNT(*) AS activos "
                         + "FROM prestamos_libros "
                         + "WHERE fecha_devuelto IS NULL "
-                        + "GROUP BY libro "
-                    + ") AS P ON P.libro = A.id "
+                        + "GROUP BY item_id "
+                    + ") AS P ON P.item_id = A.id "
                     + "WHERE A.id = ?;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ps.setInt(1, Integer.parseInt(id));
@@ -91,15 +91,15 @@ public class Consulta {
     public static String[] obrasDescriptiveStr(String id) {
         try {
             String consulta = "SELECT "
-                    + "CONCAT(A.nombre, ' | ', A.autor, ' | ', A.editorial) AS 'descripcion', "
+                    + "CONCAT(A.titulo, ' | ', A.autor, ' | ', A.editorial) AS 'descripcion', "
                     + "IF(P.activos IS NULL OR A.unidades > P.activos, 'Si', 'No') AS 'disponibilidad' "
                     + "FROM obras AS A "
                     + "LEFT JOIN ( "
-                        + "SELECT obra, COUNT(*) AS activos "
+                        + "SELECT item_id, COUNT(*) AS activos "
                         + "FROM prestamos_obras "
                         + "WHERE fecha_devuelto IS NULL "
-                        + "GROUP BY obra "
-                    + ") AS P ON P.obra = A.id "
+                        + "GROUP BY item_id "
+                    + ") AS P ON P.item_id = A.id "
                     + "WHERE A.id = ?;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ps.setInt(1, Integer.parseInt(id));
@@ -117,15 +117,15 @@ public class Consulta {
     public static String[] revistasDescriptiveStr(String id) {
         try {
             String consulta = "SELECT "
-                    + "CONCAT(A.nombre, ' | ', A.editorial) AS 'descripcion', "
+                    + "CONCAT(A.titulo, ' | ', A.editorial) AS 'descripcion', "
                     + "IF(P.activos IS NULL OR A.unidades > P.activos, 'Si', 'No') AS 'disponibilidad' "
                     + "FROM revistas AS A "
                     + "LEFT JOIN ( "
-                        + "SELECT revista, COUNT(*) AS activos "
+                        + "SELECT item_id, COUNT(*) AS activos "
                         + "FROM prestamos_revistas "
                         + "WHERE fecha_devuelto IS NULL "
-                        + "GROUP BY revista "
-                    + ") AS P ON P.revista = A.id "
+                        + "GROUP BY item_id "
+                    + ") AS P ON P.item_id = A.id "
                     + "WHERE A.id = ?;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ps.setInt(1, Integer.parseInt(id));
@@ -143,15 +143,15 @@ public class Consulta {
     public static String[] cdsDescriptiveStr(String id) {
         try {
             String consulta = "SELECT "
-                    + "CONCAT(A.nombre, ' | ', A.autor, ' | ', A.genero) AS 'descripcion', "
+                    + "CONCAT(A.titulo, ' | ', A.autor, ' | ', A.genero) AS 'descripcion', "
                     + "IF(P.activos IS NULL OR A.unidades > P.activos, 'Si', 'No') AS 'disponibilidad' "
                     + "FROM cds AS A "
                     + "LEFT JOIN ( "
-                        + "SELECT cd, COUNT(*) AS activos "
+                        + "SELECT item_id, COUNT(*) AS activos "
                         + "FROM prestamos_cds "
                         + "WHERE fecha_devuelto IS NULL "
-                        + "GROUP BY cd "
-                    + ") AS P ON P.cd = A.id "
+                        + "GROUP BY item_id "
+                    + ") AS P ON P.item_id = A.id "
                     + "WHERE A.id = ?;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ps.setInt(1, Integer.parseInt(id));
@@ -169,15 +169,15 @@ public class Consulta {
     public static String[] tesisDescriptiveStr(String id) {
         try {
             String consulta = "SELECT "
-                    + "CONCAT(A.nombre, ' | ', A.fecha_publicacion, ' | ', A.institucion, ' | ', A.facultad) AS 'descripcion', "
+                    + "CONCAT(A.titulo, ' | ', A.fecha_publicacion, ' | ', A.institucion, ' | ', A.facultad) AS 'descripcion', "
                     + "IF(P.activos IS NULL OR A.unidades > P.activos, 'Si', 'No') AS 'disponibilidad' "
                     + "FROM tesis AS A "
                     + "LEFT JOIN ( "
-                        + "SELECT tesis, COUNT(*) AS activos "
+                        + "SELECT item_id, COUNT(*) AS activos "
                         + "FROM prestamos_tesis "
                         + "WHERE fecha_devuelto IS NULL "
-                        + "GROUP BY tesis "
-                    + ") AS P ON P.tesis = A.id "
+                        + "GROUP BY item_id "
+                    + ") AS P ON P.item_id = A.id "
                     + "WHERE A.id = ?;";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             ps.setInt(1, Integer.parseInt(id));

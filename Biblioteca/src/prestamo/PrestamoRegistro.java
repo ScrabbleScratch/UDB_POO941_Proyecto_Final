@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime; 
 import javax.swing.JOptionPane;
 
-import menu.Menu;
 import items.Consulta;
 import usuario.StatusUsuario;
 
@@ -48,7 +47,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
     
     private static void goBack() {
         unmount();
-        Menu.mount();
+        MenuPrestamos.mount();
     }
     
     public static String joinArray(Object[] arr, String delimiter) {
@@ -79,12 +78,12 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         txtItemDesc = new javax.swing.JTextField();
         lblItemDesc = new javax.swing.JLabel();
         lblReturnDate = new javax.swing.JLabel();
-        cmbReturnDate = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         txtItemAvail = new javax.swing.JTextField();
         lblUserExists = new javax.swing.JLabel();
         lblUserHelper = new javax.swing.JLabel();
         lblDateHelper = new javax.swing.JLabel();
+        txtReturnDate = new javax.swing.JTextField();
         pnlBottomButtons = new javax.swing.JPanel();
         btnRegister = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
@@ -136,15 +135,8 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         lblItemDesc.setLabelFor(txtItemDesc);
         lblItemDesc.setText("Descripción del ítem:");
 
-        lblReturnDate.setLabelFor(cmbReturnDate);
+        lblReturnDate.setLabelFor(txtReturnDate);
         lblReturnDate.setText("Fecha de devolución:");
-
-        cmbReturnDate.setEnabled(false);
-        cmbReturnDate.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbReturnDateItemStateChanged(evt);
-            }
-        });
 
         jLabel1.setText("Disponible:");
 
@@ -152,6 +144,12 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         txtItemAvail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         lblUserHelper.setForeground(new java.awt.Color(235, 70, 52));
+        lblUserHelper.setText(" ");
+
+        lblDateHelper.setForeground(new java.awt.Color(52, 58, 235));
+        lblDateHelper.setText(" ");
+
+        txtReturnDate.setEditable(false);
 
         javax.swing.GroupLayout pnlInputsLayout = new javax.swing.GroupLayout(pnlInputs);
         pnlInputs.setLayout(pnlInputsLayout);
@@ -159,36 +157,43 @@ public class PrestamoRegistro extends javax.swing.JFrame {
             pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInputsLayout.createSequentialGroup()
                 .addContainerGap(76, Short.MAX_VALUE)
-                .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(pnlInputsLayout.createSequentialGroup()
-                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCategory))
-                        .addGap(60, 60, 60)
-                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblItemId)
-                            .addComponent(cmbItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlInputsLayout.createSequentialGroup()
-                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(pnlInputsLayout.createSequentialGroup()
+                            .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(pnlInputsLayout.createSequentialGroup()
+                                    .addComponent(lblCategory)
+                                    .addGap(193, 193, 193))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputsLayout.createSequentialGroup()
+                                    .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(60, 60, 60)))
+                            .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblItemId)
+                                .addComponent(cmbItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(pnlInputsLayout.createSequentialGroup()
+                            .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtItemDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblItemDesc))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtItemAvail)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputsLayout.createSequentialGroup()
+                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnlInputsLayout.createSequentialGroup()
                                 .addComponent(lblUsername)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblUserExists))
-                            .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(lblUserHelper))
-                        .addGap(60, 60, 60)
+                                .addComponent(lblUserExists)
+                                .addGap(198, 198, 198))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputsLayout.createSequentialGroup()
+                                .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                    .addComponent(lblUserHelper))
+                                .addGap(60, 60, 60)))
                         .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblReturnDate)
-                            .addComponent(cmbReturnDate, 0, 184, Short.MAX_VALUE)
-                            .addComponent(lblDateHelper)))
-                    .addGroup(pnlInputsLayout.createSequentialGroup()
-                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblItemDesc)
-                            .addComponent(txtItemDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtItemAvail)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtReturnDate, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(lblDateHelper))))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         pnlInputsLayout.setVerticalGroup(
@@ -216,18 +221,18 @@ public class PrestamoRegistro extends javax.swing.JFrame {
                     .addGroup(pnlInputsLayout.createSequentialGroup()
                         .addComponent(lblReturnDate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInputsLayout.createSequentialGroup()
                         .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblUsername)
                             .addComponent(lblUserExists))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDateHelper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUserHelper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(2, 2, 2)
+                .addGroup(pnlInputsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDateHelper)
+                    .addComponent(lblUserHelper))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pnlBottomButtons.setBackground(new java.awt.Color(204, 255, 255));
@@ -295,7 +300,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -312,19 +317,19 @@ public class PrestamoRegistro extends javax.swing.JFrame {
         String[] ids = null;
         switch (this.itemCategory) {
             case "Libro":
-                ids = Consulta.categoryIds(Consulta.Categoria.LIBROS);
+                ids = Consulta.idsCategoria(Consulta.Categoria.LIBROS);
                 break;
             case "Obra":
-                ids = Consulta.categoryIds(Consulta.Categoria.OBRAS);
+                ids = Consulta.idsCategoria(Consulta.Categoria.OBRAS);
                 break;
             case "Revista":
-                ids = Consulta.categoryIds(Consulta.Categoria.REVISTAS);
+                ids = Consulta.idsCategoria(Consulta.Categoria.REVISTAS);
                 break;
             case "CD":
-                ids = Consulta.categoryIds(Consulta.Categoria.CDS);
+                ids = Consulta.idsCategoria(Consulta.Categoria.CDS);
                 break;
             case "Tesis":
-                ids = Consulta.categoryIds(Consulta.Categoria.TESIS);
+                ids = Consulta.idsCategoria(Consulta.Categoria.TESIS);
                 break;
             default:
                 break;
@@ -400,34 +405,23 @@ public class PrestamoRegistro extends javax.swing.JFrame {
                 this.lblUserHelper.setText("");
             }
             
-//            GENERATE AVAILABLE RETURN DATES FOR THE USER
+//            GENERATE RETURN DATE FOR THE USER
             this.lblDateHelper.setText("Máximo " + this.userStatus.maxDias + " días.");
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            LocalDateTime now = LocalDateTime.now();
-            for (int i = 0; i < this.userStatus.maxDias; i++) {
-                this.cmbReturnDate.addItem(dtf.format(now.plusDays(i + 1)));
-            }
-            this.cmbReturnDate.setEnabled(true);
+            this.returnDate = dtf.format(LocalDateTime.now().plusDays(this.userStatus.maxDias));
+            this.txtReturnDate.setText(this.returnDate);
+            this.txtReturnDate.setEnabled(true);
+            this.btnRegister.setEnabled(true);
         } else {
             this.userStatus = null;
             this.lblUserExists.setText("❌");
             this.lblUserExists.setForeground(Color.red);
             this.lblDateHelper.setText("");
-            this.cmbReturnDate.removeAllItems();
-            this.cmbReturnDate.setEnabled(false);
+            this.txtReturnDate.setText("");
+            this.txtReturnDate.setEnabled(false);
+            this.btnRegister.setEnabled(false);
         }
     }//GEN-LAST:event_txtUsernameKeyReleased
-
-    private void cmbReturnDateItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbReturnDateItemStateChanged
-        if (this.cmbReturnDate.getSelectedIndex() < 0) {
-            this.btnRegister.setEnabled(false);
-            return;
-        }
-        
-        this.returnDate = this.cmbReturnDate.getSelectedItem().toString();
-        
-        this.btnRegister.setEnabled(true);
-    }//GEN-LAST:event_cmbReturnDateItemStateChanged
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         int confirm = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea guardar este registro?", "Confirmación", 0);
@@ -445,7 +439,6 @@ public class PrestamoRegistro extends javax.swing.JFrame {
     private javax.swing.JButton btnRegister;
     private javax.swing.JComboBox<String> cmbCategory;
     private javax.swing.JComboBox<String> cmbItemId;
-    private javax.swing.JComboBox<String> cmbReturnDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCategory;
@@ -461,6 +454,7 @@ public class PrestamoRegistro extends javax.swing.JFrame {
     private javax.swing.JPanel pnlInputs;
     private javax.swing.JTextField txtItemAvail;
     private javax.swing.JTextField txtItemDesc;
+    private javax.swing.JTextField txtReturnDate;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

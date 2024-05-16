@@ -22,7 +22,7 @@ import database.Conexion;
 public class Registro {
     public static boolean libro(JTextField nombre, JTextField autor, JTextField genero, JTextField editorial, JFormattedTextField isbn, JTextField anio, JTextField edicion, JTextField unidad, JTextField estante, JTextField palabras) {
         try {
-            String consulta = "INSERT INTO libros (nombre, autor, genero, editorial, isbn, "
+            String consulta = "INSERT INTO libros (titulo, autor, genero, editorial, isbn, "
                     + "anio_publicacion, edicion, unidades, estante, palabras_clave) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
@@ -30,7 +30,6 @@ public class Registro {
             int intAnio = Integer.parseInt(anio.getText());
             int intEdicion = Integer.parseInt(edicion.getText());
             int intUnidad = Integer.parseInt(unidad.getText());
-            int disponible = 1;
             
             ps.setString(1, nombre.getText());
             ps.setString(2, autor.getText());
@@ -60,7 +59,7 @@ public class Registro {
     
     public static boolean obra(JTextField nombre, JTextField autor, JTextField genero, JTextField editorial, JFormattedTextField isbn, JTextField anio, JTextField edicion, JTextField unidad, JTextField estante, JTextField palabras) {
         try {
-            String consulta = "INSERT INTO obras (nombre, autor, genero, editorial, isbn, "
+            String consulta = "INSERT INTO obras (titulo, autor, genero, editorial, isbn, "
                     + "anio_publicacion, edicion, unidades, estante, palabras_clave) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
@@ -68,7 +67,6 @@ public class Registro {
             int intAnio = Integer.parseInt(anio.getText());
             int intEdicion = Integer.parseInt(edicion.getText());
             int intUnidad = Integer.parseInt(unidad.getText());
-            int disponible = 1;
             
             ps.setString(1, nombre.getText());
             ps.setString(2, autor.getText());
@@ -98,13 +96,12 @@ public class Registro {
     
     public static boolean revista(JTextField nombre, JTextField editorial, JComboBox frecuencia, JFormattedTextField issn, JTextField tematica, JTextField volumen, JTextField estante, JTextField palabras) {
         try {
-            String consulta = "INSERT INTO revistas (nombre, editorial, frecuencia, issn, "
+            String consulta = "INSERT INTO revistas (titulo, editorial, frecuencia, issn, "
                     + "tematica, volumen, estante, palabras_clave) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             
             int intVolumen = Integer.parseInt(volumen.getText());
-            int disponible = 1;
             
             ps.setString(1, nombre.getText());
             ps.setString(2, editorial.getText());
@@ -133,13 +130,12 @@ public class Registro {
     public static boolean cd(JTextField nombre, JTextField autor, JTextField genero, JTextField anio, JTextField duracion, JTextField estante) {
         try {
             String consulta = "INSERT INTO cds "
-                    + "(nombre, autor, genero, anio_publicacion, duracion, estante) "
+                    + "(titulo, autor, genero, anio_publicacion, duracion, estante) "
                     + "VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             
             int intAnio = Integer.parseInt(anio.getText());
             int intDuracion = Integer.parseInt(duracion.getText());
-            int disponible = 1;
             
             ps.setString(1, nombre.getText());
             ps.setString(2, autor.getText());
@@ -166,12 +162,11 @@ public class Registro {
     public static boolean tesis(JTextField titulo, JTextField fecha, JTextField institucion, JTextField facultad, JTextField paginas, JTextField ubicacion) {
         try {
             String consulta="INSERT INTO tesis "
-                    + "(nombre, fecha_publicacion, institucion, facultad, paginas, estante) "
+                    + "(titulo, fecha_publicacion, institucion, facultad, paginas, estante) "
                     + "VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = Conexion.establecerConexion().prepareStatement(consulta);
             
             int intPaginas = Integer.parseInt(paginas.getText());
-            int disponible = 1;
             
             ps.setString(1, titulo.getText());
             ps.setString(2, fecha.getText());
