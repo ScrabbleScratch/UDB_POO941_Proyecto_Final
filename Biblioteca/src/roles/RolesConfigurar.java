@@ -216,22 +216,6 @@ public class RolesConfigurar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        int roleId = this.cmbRole.getSelectedIndex() + 1;
-        int maxItems = Integer.parseInt(this.spnMaxItems.getValue().toString());
-        int maxDays = Integer.parseInt(this.spnMaxDays.getValue().toString());
-        double dailyFee = Double.parseDouble(this.spnDailyFee.getValue().toString());
-        
-        if(Roles.configurar(roleId, maxItems, maxDays, dailyFee)) {
-            unmount();
-            mount();
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
-        goBack();
-    }//GEN-LAST:event_btnReturnActionPerformed
-
     private void cmbRoleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbRoleItemStateChanged
         int selectedIndex = this.cmbRole.getSelectedIndex();
         Number[] params = null;
@@ -251,6 +235,22 @@ public class RolesConfigurar extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_cmbRoleItemStateChanged
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        int roleId = this.cmbRole.getSelectedIndex() + 1;
+        int maxItems = Integer.parseInt(this.spnMaxItems.getValue().toString());
+        int maxDays = Integer.parseInt(this.spnMaxDays.getValue().toString());
+        double dailyFee = Double.parseDouble(this.spnDailyFee.getValue().toString());
+        
+        if(Roles.configurar(roleId, maxItems, maxDays, dailyFee)) {
+            unmount();
+            mount();
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        goBack();
+    }//GEN-LAST:event_btnReturnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnReturn;
