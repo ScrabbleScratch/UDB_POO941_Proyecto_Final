@@ -43,7 +43,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+              <Component id="jLabel2" alignment="0" pref="600" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" max="32767" attributes="0"/>
@@ -59,7 +59,7 @@
                   <Component id="jLabel2" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <EmptySpace pref="82" max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -72,7 +72,7 @@
               <Font name="Verdana" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de usuarios"/>
+            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de pr&#xe9;stamos"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -123,15 +123,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="185" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnChangePasswd" alignment="1" pref="210" max="32767" attributes="0"/>
-                          <Component id="btnAddUser" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnRemoveUser" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnManageRoles" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnQueryRentals" alignment="1" pref="210" max="32767" attributes="0"/>
+                          <Component id="btnRegisterRental" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnReturnRental" max="32767" attributes="0"/>
+                          <Component id="btbCheckFee" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="185" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -139,65 +139,63 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAddUser" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRegisterRental" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="btnChangePasswd" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQueryRentals" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRemoveUser" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReturnRental" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnManageRoles" min="-2" max="-2" attributes="0"/>
+                      <Component id="btbCheckFee" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnChangePasswd">
+            <Component class="javax.swing.JButton" name="btnQueryRentals">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Restablecer contrase&#xf1;a"/>
+                <Property name="text" type="java.lang.String" value="Consultar pr&#xe9;stamos"/>
                 <Property name="name" type="java.lang.String" value="btnIngresar" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChangePasswdActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQueryRentalsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnRemoveUser">
+            <Component class="javax.swing.JButton" name="btnRegisterRental">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Eliminar usuario"/>
+                <Property name="text" type="java.lang.String" value="Registrar pr&#xe9;stamo"/>
                 <Property name="name" type="java.lang.String" value="btnIngresar" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveUserActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterRentalActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnAddUser">
+            <Component class="javax.swing.JButton" name="btnReturnRental">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Agregar usuario"/>
-                <Property name="name" type="java.lang.String" value="btnIngresar" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Devolver pr&#xe9;stamo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddUserActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReturnRentalActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnManageRoles">
+            <Component class="javax.swing.JButton" name="btbCheckFee">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Configurar roles"/>
-                <Property name="name" type="java.lang.String" value="btnIngresar" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Consultar mora"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageRolesActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbCheckFeeActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

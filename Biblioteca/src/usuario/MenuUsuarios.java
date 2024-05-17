@@ -11,6 +11,7 @@ package usuario;
  */
 
 import menu.Menu;
+import roles.RolesConfigurar;
 
 public class MenuUsuarios extends javax.swing.JFrame {
     private static MenuUsuarios menuUsuariosGUI;
@@ -55,6 +56,7 @@ public class MenuUsuarios extends javax.swing.JFrame {
         btnChangePasswd = new javax.swing.JButton();
         btnRemoveUser = new javax.swing.JButton();
         btnAddUser = new javax.swing.JButton();
+        btnManageRoles = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +121,15 @@ public class MenuUsuarios extends javax.swing.JFrame {
             }
         });
 
+        btnManageRoles.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnManageRoles.setText("Configurar roles");
+        btnManageRoles.setName("btnIngresar"); // NOI18N
+        btnManageRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageRolesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -128,7 +139,8 @@ public class MenuUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnChangePasswd, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(btnAddUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRemoveUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRemoveUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageRoles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -140,6 +152,8 @@ public class MenuUsuarios extends javax.swing.JFrame {
                 .addComponent(btnChangePasswd)
                 .addGap(18, 18, 18)
                 .addComponent(btnRemoveUser)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageRoles)
                 .addContainerGap())
         );
 
@@ -161,9 +175,8 @@ public class MenuUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,10 +198,6 @@ public class MenuUsuarios extends javax.swing.JFrame {
         UsuarioCambioContra.mount();
     }//GEN-LAST:event_btnChangePasswdActionPerformed
 
-    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
-        goBack();
-    }//GEN-LAST:event_btnReturnActionPerformed
-
     private void btnRemoveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveUserActionPerformed
         unmount();
         UsuarioEliminar.mount();
@@ -199,9 +208,19 @@ public class MenuUsuarios extends javax.swing.JFrame {
         UsuarioRegistro.mount();
     }//GEN-LAST:event_btnAddUserActionPerformed
 
+    private void btnManageRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageRolesActionPerformed
+        unmount();
+        RolesConfigurar.mount();
+    }//GEN-LAST:event_btnManageRolesActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        goBack();
+    }//GEN-LAST:event_btnReturnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddUser;
     private javax.swing.JButton btnChangePasswd;
+    private javax.swing.JButton btnManageRoles;
     private javax.swing.JButton btnRemoveUser;
     private javax.swing.JButton btnReturn;
     private javax.swing.JLabel jLabel2;
